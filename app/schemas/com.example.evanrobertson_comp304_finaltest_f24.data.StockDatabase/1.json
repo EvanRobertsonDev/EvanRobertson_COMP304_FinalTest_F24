@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "1f2e1cd5968aee9b622d8a2206f52bdb",
+    "entities": [
+      {
+        "tableName": "Stocks",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`stockSymbol` TEXT NOT NULL, `companyName` TEXT NOT NULL, `stockQuote` REAL NOT NULL, PRIMARY KEY(`stockSymbol`))",
+        "fields": [
+          {
+            "fieldPath": "stockSymbol",
+            "columnName": "stockSymbol",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyName",
+            "columnName": "companyName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stockQuote",
+            "columnName": "stockQuote",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "stockSymbol"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1f2e1cd5968aee9b622d8a2206f52bdb')"
+    ]
+  }
+}
